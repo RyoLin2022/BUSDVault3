@@ -1,7 +1,7 @@
 import bgImg1 from '../images/background/bg.jpg';
 // import bgImg2 from '../images/background/bg-3.jpg';
 // import bgImg3 from '../images/background/bg-4.jpg';
-import img1 from '../images/common/busd.png';
+// import img1 from '../images/common/busd.png';
 
 const dataSlider = [
     {
@@ -9,7 +9,7 @@ const dataSlider = [
         title: 'BUSD Vault for everyone',
         desc : 'The vault is designed to have a least price such that every holder do not have to worry about the price',
         bgImg: bgImg1,
-        img : img1
+        // img : img1
     },
     {
         id: 2,
@@ -30,7 +30,7 @@ const dataSlider = [
         title: 'BUSD Vault for everyone',
         desc : 'The vault is designed to have a least price such that every holder do not have to worry about the price',
         bgImg: bgImg1,
-        img : img1
+        // img : img1
     },
     {
         id: 5,

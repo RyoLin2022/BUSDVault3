@@ -1,18 +1,66 @@
-import React , { useState , useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
-import { Link , NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import menus from '../../pages/menu';
 
+import { ethers } from 'ethers'
 import './styles.scss';
 import logo from '../../assets/images/logo/logo.png'
-import Button from '../button';
 
-
+let currentAccount = null;
 
 const Header = () => {
 
+    const [walletAddress, setWalletAddress] = useState('')
+    async function changingAccount() {
+        if (window.ethereum) {
+            window.ethereum.on('accountsChanged', () => {
+                requestAccount()
+            })
+        }
+    }
+
+    useEffect(() => {
+        changingAccount()
+    }, [walletAddress])
+
+    async function requestAccount() {
+        console.log('Requesting account...')
+        try {
+            const accounts = await window.ethereum.request({
+                method: 'eth_requestAccounts',
+            })
+            setWalletAddress(accounts[0])
+            currentAccount = accounts[0]
+            sessionStorage.setItem('Account', currentAccount)
+            var btnConnect = document.getElementById('connect-btn')
+            let lengthAcc = currentAccount.length
+            btnConnect.value = currentAccount
+            btnConnect.innerText =
+                currentAccount.substring(0, 4) + '...' + currentAccount.substring(lengthAcc - 4, lengthAcc)
+        } catch (error) {
+            console.log('error connecting')
+        }
+        //Check if Metamask Exist
+        if (window.ethereum) {
+            console.log('detected')
+        } else {
+            console.log('not detected')
+        }
+    }
+
+    async function connectWallet() {
+        if (typeof window.ethereum !== 'undefined') {
+            await requestAccount()
+            const provider = new ethers.providers.Web3Provider(window.ethereum)
+            alert('Wallet connected successfully!')
+        } else {
+            alert('Please install an injected Web3 wallet')
+        }
+    }
+
     const [scroll, setScroll] = useState(false);
-        useEffect(() => {
+    useEffect(() => {
         window.addEventListener("scroll", () => {
             setScroll(window.scrollY > 300);
         });
@@ -25,12 +73,12 @@ const Header = () => {
 
     const handleMenuActive = () => {
         setMenuActive(!menuActive);
-      };
+    };
 
-    
+
     const [activeIndex, setActiveIndex] = useState(null);
     const handleDropdown = index => {
-        setActiveIndex(index); 
+        setActiveIndex(index);
     };
 
     return (
@@ -44,9 +92,9 @@ const Header = () => {
                         <ul id="menu-primary-menu" className="menu">
 
                             {
-                                menus.map((data,idx) => (
-                                    <li key={idx} onClick={()=> handleDropdown(idx)} className={`menu-item ${data.namesub ? 'menu-item-has-children' : ''} ${activeIndex === idx ? 'active' : ''}`} 
-                                    
+                                menus.map((data, idx) => (
+                                    <li key={idx} onClick={() => handleDropdown(idx)} className={`menu-item ${data.namesub ? 'menu-item-has-children' : ''} ${activeIndex === idx ? 'active' : ''}`}
+
                                     >
                                         <Link to={data.links}>{data.name}</Link>
                                         {
@@ -59,13 +107,16 @@ const Header = () => {
                                                 }
                                             </ul>
                                         }
-                                        
+
                                     </li>
                                 ))
                             }
                         </ul>
                     </nav>
-                    <Button title='join discord' path='/contact' />
+                    <button className="tf-button btn-effect" onClick={connectWallet}>
+                        <span className="boder-fade"></span>
+                        <span className="effect" id="connect-btn">Connect Wallet</span>
+                    </button>
 
                     <div className={`mobile-button ${menuActive ? 'active' : ''}`} onClick={handleMenuActive}><span></span></div>
                 </div>

@@ -82,7 +82,7 @@ function Footer(props) {
                         </li>
                     </ul>
                     <h5 className="heading">don’t miss out, join now for early access</h5>
-                    <p>Maecenas sit pretium, cras in. In quisque sem id eget. In vel gravida ut </p>
+                    <p>Smart Buyers Buy</p>
                     <form action="#" id="subscribe-form">
                         <input type="email" placeholder="Enter your email address" required="" id="subscribe-email" />
                         <button className="tf-button-st2 btn-effect" type="submit" id="subscribe-button"> <span className="effect">Subscribe</span></button>
@@ -93,7 +93,7 @@ function Footer(props) {
                 <div className="container">
                     <div className="wrap-fx">
                         <div className="Copyright">
-                            <p>CYBOX 2022- ALL rights reserved</p>
+                            <p>BUSD Vault 2022- ALL rights reserved</p>
                         </div>
                         <ul className="list">
                             <li>

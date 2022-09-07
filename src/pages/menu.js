@@ -6,18 +6,8 @@ const menus = [
         namesub: [
             {
                 id: 1,
-                sub: 'Home 01',
+                sub: 'Home',
                 links: '/'
-            },
-            {
-                id: 2,
-                sub: 'Home 02',
-                links: '/home-v2'
-            },
-            {
-                id: 3,
-                sub: 'Home 03',
-                links: '/home-v3'
             },
         ]
     },
@@ -28,13 +18,8 @@ const menus = [
         namesub: [
             {
                 id: 1,
-                sub: 'About 01',
+                sub: 'About',
                 links: '/about-v1'
-            },
-            {
-                id: 2,
-                sub: 'About 02',
-                links: '/about-v2'
             },
             {
                 id: 3,
