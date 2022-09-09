@@ -1,19 +1,19 @@
 const dataAbout = [
     {
         id: 1,
-        title: 'Unique, 1/1 generated',
-        desc: 'Gravida viverra dui aliquet eu tortor lorem et gravida. Sed amet phasellus tellus mauris auctor rhoncus. Malesuada nisl at mauris cursus lorem mattis arcu.',
+        title: 'Always back you up',
+        desc: 'Once there is a trade, the tax will transfer BUSD to the Vault Contract, such that we can maintain a least price of the token',
         class: 'active'
     },
     {
         id: 2,
-        title: '140+ traits in 16 categories',
-        desc: 'Ornare faucibus urna, netus ut. Ac vulputate ornare donec orci sed gravida senectus. Felis quis morbi vivamus est eget sapien magnis quis.',
+        title: 'Buying Taxes',
+        desc: '6% add LP reward, 2% burning, 2% marketing',
     },
     {
         id: 3,
-        title: 'Usage rights included',
-        desc: 'Ac, bibendum duis gravida nullam. At amet nibh platea nibh interdum non, egestas bibendum iaculis. Etiam tristique ultricies tristique ullamcorper donec eget odio ut.',
+        title: 'Selling Taxes',
+        desc: '6% add LP reward, 4% vault',
     },
 ]
 
