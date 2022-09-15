@@ -11,18 +11,8 @@ const dataTeam = [
         listsocial: [
             {
                 id: 1,
-                icon: 'fab fa-twitter',
-                link: '#'
-            },
-            {
-                id: 2,
                 icon: 'fa fa-paper-plane',
                 link: 'https://t.me/RyoLin'
-            },
-            {
-                id: 3,
-                icon: 'fab fa-reddit',
-                link: '#'
             },
         ]
     },

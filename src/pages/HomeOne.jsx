@@ -14,8 +14,6 @@ import Work from '../features/work';
 import dataWork from '../assets/fake-data/data-work';
 import Team from '../features/team';
 import dataTeam from '../assets/fake-data/data-team';
-import Blog from '../features/blog';
-import dataBlog from '../assets/fake-data/data-blog';
 import Partner from '../features/partner';
 import dataPartner from '../assets/fake-data/data-partner';
 import FAQ from '../features/faq';
@@ -37,8 +35,6 @@ function HomeOne(props) {
         <Work data={dataWork} />
 
         <Team data={dataTeam} />
-
-        <Blog data={dataBlog} />
 
         <Partner data={dataPartner} />
 
