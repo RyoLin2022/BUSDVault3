@@ -16,7 +16,7 @@ function About(props) {
         {
             subtitle : 'About us',
             title: 'What is cybox?',
-            desc : 'Maecenas sit pretium, cras in. In quisque sem id eget. In vel gravida ut adipiscing integer felis.'
+            desc : 'BUSD Vault(BV) is a token that stores BUSD in a vault, the BUSD is from the tax of the BV transactions.The mechanism keep burning BV token itself and charging BUSD to the vault'
         }
     )
 

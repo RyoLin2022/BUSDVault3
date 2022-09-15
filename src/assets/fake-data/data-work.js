@@ -3,26 +3,26 @@ const dataWork = [
         id: 1,
         numb: '01',
         title: 'Set up your wallet',
-        text : 'Arcu morbi sit laoreet semper ultrices maecenas auctor amet. Donec tortor facilisis risus, neque sit aliquet orci, malesuada.',
+        text : 'You need to have a WEB3 wallet, MetaMask, TokenPocket, etc..., as your browser. Login the App with your address',
         active: 'active'
     },
     {
         id: 2,
         numb: '02',
-        title: 'Buy your collection',
-        text : 'Arcu morbi sit laoreet semper ultrices maecenas auctor amet. Donec tortor facilisis risus, neque sit aliquet orci, malesuada.'
+        title: 'Mint your collection',
+        text : 'The NFT can be minted as 0.1 BNB for each. The first function of our NFT is stacking, more functions are coming...'
     },
     {
         id: 3,
         numb: '03',
-        title: "Add your NFT's",
-        text : 'Arcu morbi sit laoreet semper ultrices maecenas auctor amet. Donec tortor facilisis risus, neque sit aliquet orci, malesuada.'
+        title: "Stack your NFT's",
+        text : 'It is our NFTs first function, you can earn BNB when stacking, you can cancel stacking whenever you want'
     },
     {
         id: 4,
         numb: '04',
         title: "Sell Your NFT's",
-        text : 'Arcu morbi sit laoreet semper ultrices maecenas auctor amet. Donec tortor facilisis risus, neque sit aliquet orci, malesuada.'
+        text : 'When you do not want to hold the NFT, you can sell it in our marketplace'
     },
 ]
 export default dataWork;

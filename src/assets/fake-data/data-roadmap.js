@@ -1,19 +1,19 @@
 const dataRoadmap = [
     {
         id: 1,
-        time: 'Q2 2022',
+        time: 'Q3 2022',
         list: [
             {
-                text: 'Aenean tempor'
+                text: 'Release website and logo'
             },
             {
-                text: 'Fusce arcu maecenas'
+                text: 'IDO listing'
             },
             {
-                text: 'Malesuada felis sem elementum'
+                text: 'Launch the project'
             },
             {
-                text: 'Risus eu metus'
+                text: 'Pancake listing'
             },
         ],
         positon: 'left',
@@ -21,19 +21,19 @@ const dataRoadmap = [
     },
     {
         id: 2,
-        time: 'Q1 2022',
+        time: 'Q4 2022',
         list: [
             {
-                text: 'Release website and logo'
+                text: 'Complete NFT marketplace'
             },
             {
                 text: 'Grow community'
             },
             {
-                text: 'Launch the project'
+                text: 'Get More Holders'
             },
             {
-                text: 'Social media setup'
+                text: 'Small CEX listing'
             },
         ],
         positon: 'right',
@@ -41,155 +41,60 @@ const dataRoadmap = [
     },
     {
         id: 3,
-        time: 'Q4 2022',
+        time: 'Q1 2023',
         list: [
             {
-                text: 'Aenean tempor'
+                text: 'Website improvement'
             },
             {
-                text: 'Fusce arcu maecenas'
+                text: 'The Vault is large'
             },
             {
-                text: 'Malesuada felis sem elementum'
+                text: 'Second NFT Release'
             },
             {
-                text: 'Risus eu metus'
+                text: 'Merging the NFT'
             },
         ],
         positon: 'left'
     },
     {
         id: 4,
-        time: 'Q3 2022',
+        time: 'Q2 2023',
         list: [
             {
-                text: 'Aenean tempor'
+                text: 'The final version of the website'
             },
             {
-                text: 'Fusce arcu maecenas'
+                text: 'GameFi release'
             },
             {
-                text: 'Malesuada felis sem elementum'
+                text: 'More CEX listing'
             },
             {
-                text: 'Risus eu metus'
+                text: 'BUSD Vault Metaverse preparing'
             },
         ],
         positon: 'right'
     },
     {
         id: 5,
-        time: 'Q2 2022',
+        time: 'Q3 2023',
         list: [
             {
-                text: 'Aenean tempor'
+                text: 'TO'
             },
             {
-                text: 'Fusce arcu maecenas'
+                text: 'BE'
             },
             {
-                text: 'Malesuada felis sem elementum'
+                text: 'CONTINUED'
             },
             {
-                text: 'Risus eu metus'
+                text: 'Not the end, it is just a start'
             },
         ],
         positon: 'left'
-    },
-    {
-        id: 6,
-        time: 'Q1 2022',
-        list: [
-            {
-                text: 'Aenean tempor'
-            },
-            {
-                text: 'Fusce arcu maecenas'
-            },
-            {
-                text: 'Malesuada felis sem elementum'
-            },
-            {
-                text: 'Risus eu metus'
-            },
-        ],
-        positon: 'right'
-    },
-    {
-        id: 7,
-        time: 'Q4 2022',
-        list: [
-            {
-                text: 'Aenean tempor'
-            },
-            {
-                text: 'Fusce arcu maecenas'
-            },
-            {
-                text: 'Malesuada felis sem elementum'
-            },
-            {
-                text: 'Risus eu metus'
-            },
-        ],
-        positon: 'left'
-    },
-    {
-        id: 8,
-        time: 'Q3 2022',
-        list: [
-            {
-                text: 'Aenean tempor'
-            },
-            {
-                text: 'Fusce arcu maecenas'
-            },
-            {
-                text: 'Malesuada felis sem elementum'
-            },
-            {
-                text: 'Risus eu metus'
-            },
-        ],
-        positon: 'right'
-    },
-    {
-        id: 9,
-        time: 'Q2 2022',
-        list: [
-            {
-                text: 'Aenean tempor'
-            },
-            {
-                text: 'Fusce arcu maecenas'
-            },
-            {
-                text: 'Malesuada felis sem elementum'
-            },
-            {
-                text: 'Risus eu metus'
-            },
-        ],
-        positon: 'left'
-    },
-    {
-        id: 10,
-        time: 'Q1 2022',
-        list: [
-            {
-                text: 'Aenean tempor'
-            },
-            {
-                text: 'Fusce arcu maecenas'
-            },
-            {
-                text: 'Malesuada felis sem elementum'
-            },
-            {
-                text: 'Risus eu metus'
-            },
-        ],
-        positon: 'right'
     },
 ]
 

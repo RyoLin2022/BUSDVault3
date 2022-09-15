@@ -8,7 +8,7 @@ import About from '../features/about';
 import Project from '../features/project';
 import dataProject from '../assets/fake-data/dataProject';
 import dataAbout from '../assets/fake-data/data-about';
-import RoadMap from '../features/roadmap';
+import RoadMap from '../features/roadmap/home-v2';
 import dataRoadmap from '../assets/fake-data/data-roadmap';
 import Work from '../features/work';
 import dataWork from '../assets/fake-data/data-work';

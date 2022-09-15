@@ -2,7 +2,7 @@ const menus = [
     {
         id: 1,
         name: 'Home',
-        links: '#',
+        links: '/',
         namesub: [
             {
                 id: 1,
@@ -28,21 +28,16 @@ const menus = [
             },
             {
                 id: 4,
-                sub: 'Community',
-                links: '/community'
-            },
-            {
-                id: 5,
                 sub: 'Team Details',
                 links: '/team-details'
             },
             {
-                id: 6,
+                id: 5,
                 sub: 'FAQ',
                 links: '/faq'
             },
             {
-                id: 7,
+                id: 6,
                 sub: '404',
                 links: '/404'
             },
@@ -52,16 +47,11 @@ const menus = [
     {
         id: 3,
         name: 'Road Map',
-        links: '#',
+        links: '/road-map-v2',
         namesub: [
             {
                 id: 1,
-                sub: 'Road Map 01',
-                links: '/road-map-v1'
-            },
-            {
-                id: 2,
-                sub: 'Road Map 02',
+                sub: 'Road Map',
                 links: '/road-map-v2'
             },
         ]
@@ -85,23 +75,6 @@ const menus = [
     },
     {
         id: 5,
-        name: 'Blog',
-        links: '#',
-        namesub: [
-            {
-                id: 1,
-                sub: 'Our Blog',
-                links: '/blog'
-            },
-            {
-                id: 2,
-                sub: 'Blog Details',
-                links: '/blog-details'
-            },
-        ],
-    },
-    {
-        id: 6,
         name: 'Contact',
         links: '/contact'
     },
