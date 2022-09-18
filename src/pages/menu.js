@@ -75,8 +75,13 @@ const menus = [
     },
     {
         id: 5,
-        name: 'Contact',
-        links: '/contact'
+        name: 'Vault',
+        links: '/vault'
+    },
+    {
+        id: 6,
+        name: 'IDO',
+        links: '/ido'
     },
     
 ]

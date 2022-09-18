@@ -15,7 +15,8 @@ import Blog from "./Blog";
 import BlogDetails from "./BlogDetails";
 import Contact from "./Contact";
 import TeamDetail from "./TeamDetail";
-
+import Vault from "./Vault";
+import IDO from "./IDO";
 
 const routes = [
   { path: '/', component: <HomeOne />},
@@ -29,6 +30,8 @@ const routes = [
   { path: '/404', component: <Page404 />},
   { path: '/road-map-v1', component: <RoadMapOne />},
   { path: '/road-map-v2', component: <RoadMapTwo />},
+  { path: '/vault', component: <Vault />},
+  { path: '/ido', component: <IDO />},
   { path: '/nft-item', component: <NftItem />},
   { path: '/nft-item-details', component: <NftItemDetails />},
   { path: '/blog', component: <Blog />},
