@@ -1,17 +1,17 @@
-import React , {useState} from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import ModalVideo from 'react-modal-video';
-import 'react-modal-video/scss/modal-video.scss' ;
+import 'react-modal-video/scss/modal-video.scss';
 // import { Modal } from "react-bootstrap";
 import './styles.scss'
 
 SliderItem.propTypes = {
-    item : PropTypes.object,
+    item: PropTypes.object,
 };
 
 function SliderItem(props) {
-    const {item} = props;
+    const { item } = props;
 
     const [isOpen, setOpen] = useState(false)
 
@@ -28,88 +28,18 @@ function SliderItem(props) {
                                 <h1 className="title">{item.title}</h1>
                                 <p className="sub-title">{item.desc}</p>
                                 <div className="wrap-btn">
-                                    <button to="#" className="tf-button btn-effect popup-youtube" onClick={()=> setOpen(true)}>
-                                        <span className="boder-fade"></span>                                     
-                                        <span className="effect">watch video</span>
-                                    </button>
-                                    
+                                    <Link to="/ido">
+                                        <button className="tf-button btn-effect">
+                                            <span className="boder-fade"></span>
+                                            <span className="effect">Make IDO</span>
+                                        </button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="i7EMACWuErA" onClose={() => setOpen(false)} />
-
-            {/* <Modal
-                show={modalShow}
-                onHide={setModalShow}
-            >
-            <Modal.Header closeButton></Modal.Header>
-
-                <div className="modal-body center">
-                                <div className="box-wallet-inner">
-                                    <div className="sc-box">
-                                        <div className="img">
-                                            <img src="assets/images/common/icon-1.png" alt="Crybox" />
-                                        </div>
-                                        <h6 className="heading"><a href="#">Meta Mask</a> </h6>
-                                        <p className="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
-                                    </div>
-                                    <div className="sc-box">
-                                        <div className="img">
-                                            <img src="assets/images/common/icon-6.png" alt="Crybox" />
-                                        </div>
-                                        <h6 className="heading"><a href="#"> Bitski</a></h6>
-                                        <p className="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
-                                    </div>
-                                    <div className="sc-box">
-                                        <div className="img">
-                                            <img src="assets/images/common/vector.png" alt="Crybox" />
-                                        </div>
-                                        <h6 className="heading"><a href="#">Fortmatic</a> </h6>
-                                        <p className="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
-                                    </div>
-                                    <div className="sc-box">
-                                        <div className="img">
-                                            <img src="assets/images/common/icon-2.png" alt="Crybox" />
-                                        </div>
-                                        <h6 className="heading"><a href="#">Coinbase Wallet</a> </h6>
-                                        <p className="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
-                                    </div>
-                                    <div className="sc-box">
-                                        <div className="img">
-                                            <img src="assets/images/common/icon-3.png" alt="Crybox" />
-                                        </div>
-                                        <h6 className="heading"><a href="#">Authereum</a> </h6>
-                                        <p className="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
-                                    </div>
-                                    <div className="sc-box">
-                                        <div className="img">
-                                            <img src="assets/images/common/icon-4.png" alt="Crybox" />
-                                        </div>
-                                        <h6 className="heading"><a href="#">Kaikas</a> </h6>
-                                        <p className="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
-                                    </div>
-                                </div>  
-                            </div>
-            </Modal> */}
-
-            {/* <div className="modal fade popup" id="popup_bid" tabindex="-1" role="dialog" aria-hidden="true">
-            <div className="modal-dialog modal-dialog-centered" role="document">
-                <div className="modal-content">
-                    <div className="header-popup">
-                        <h5>Connect to a wallet</h5>
-                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    
-                    
-                </div>
-            </div>
-        </div> */}
         </div>
     );
 }

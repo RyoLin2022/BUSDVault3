@@ -16,7 +16,7 @@ function FAQ(props) {
                     <div className="col-xl-6 col-md-12">
                         <div className="flat-accordion" data-aos="fade-up" data-aos-duration="800">
                             {
-                                dataFaq.slice(0,5).map(item => (
+                                dataFaq.slice(0,3).map(item => (
                                     <AccordionItem key={item.id} item={item} />
                                 ))
                             }
@@ -26,7 +26,7 @@ function FAQ(props) {
                     <div className="col-xl-6 col-md-12">
                         <div className="flat-accordion" data-aos="fade-up" data-aos-duration="800">
                             {
-                                dataFaq.slice(1,6).map(item => (
+                                dataFaq.slice(3,6).map(item => (
                                     <AccordionItem key={item.id} item={item} />
                                 ))
                             }

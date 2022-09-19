@@ -11,7 +11,7 @@ function ComingSoon(props) {
                         <div className="header__logo">
                             <Link to="/"><img src={require('../assets/images/logo/logo.png')} alt="" /></Link>
                         </div>
-                        <div className="sub-heading"><span>Site</span><span>UNnder</span><span>Reconstruction</span></div>
+                        <div className="sub-heading"><span>Site</span><span>Under</span><span>Reconstruction</span></div>
                         <h3 data-aos="zoom-in" data-aos-duration="800">
                             <span>Coming</span><span>Soon</span>
                         </h3>

@@ -8,7 +8,6 @@ function IDO(props) {
     async function LoadAccount() {
         currentAccount = sessionStorage.getItem('Account');
     }
-    
     return (
         <div className='IDO'>
             <PageTitle title='IDO' />
@@ -23,8 +22,10 @@ function IDO(props) {
                         </div>
                         <div className="col-xl-6 col-lg-6 col-md-12">
                             <div className="item-details" data-aos="fade-left" data-aos-duration="800">
-                                <p>The IDO limitation is 50 BUSD for each address</p>
+                                <p>The IDO price is 50 BUSD for each address</p>
                                 <p>Note : All of the token claimed from IDO should be added into the liquidity pool</p>
+                                <p>The address would be blacklisted if you did not add into the liquidity pool</p>
+                                <p>Removing LP would be punished before the launch</p>
                                 <Link to="#" className="tf-button btn-effect">
                                     <span className="boder-fade"></span>
                                     <span className="effect">Make IDO</span>

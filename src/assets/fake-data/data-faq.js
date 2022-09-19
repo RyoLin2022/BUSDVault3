@@ -2,7 +2,7 @@ const dataFaq = [
     {
         id: 1,
         title: 'What are the NFTs?',
-        content: 'The NFT is made for stacking in the first generation, anyone who bought the NFTs can get revenues from stacking',
+        content: 'The first generation NFT is made for stacking , anyone who bought the NFTs can get revenues from stacking',
         show: 'show'
     },
     {
@@ -22,6 +22,11 @@ const dataFaq = [
     },
     {
         id: 5,
+        title: 'More Details of the NFT utilities',
+        content: 'For More Details of the utilities, please check them our on the NFT Utility Page',
+    },
+    {
+        id: 6,
         title: 'For More Details of the second utility',
         content: 'For More Details of the second utility, please contact @RyoLin on the Telegram',
     },

@@ -33,7 +33,7 @@ function FAQ(props) {
                         <div className="flat-accordion" data-aos="fade-up" data-aos-duration="800">
 
                             {
-                                data.slice(0,5).map(item => (
+                                data.slice(0,6).map(item => (
                                     <AccordionItem key={item.id} item={item} />
                                 ))
                             }

@@ -17,6 +17,10 @@ import Contact from "./Contact";
 import TeamDetail from "./TeamDetail";
 import Vault from "./Vault";
 import IDO from "./IDO";
+import NFTMint from "./NFTMint";
+import NFTMarketplace from "./NFTMarketplace";
+import NFTProfile from "./NFTProfile";
+import NFTStaking from "./NFTStaking";
 
 const routes = [
   { path: '/', component: <HomeOne />},
@@ -32,8 +36,12 @@ const routes = [
   { path: '/road-map-v2', component: <RoadMapTwo />},
   { path: '/vault', component: <Vault />},
   { path: '/ido', component: <IDO />},
+  { path: '/nft-mint', component: <NFTMint />},
+  { path: '/nft-staking', component: <NFTStaking />},
+  { path: '/nft-profile', component: <NFTProfile />},
   { path: '/nft-item', component: <NftItem />},
   { path: '/nft-item-details', component: <NftItemDetails />},
+  { path: '/nft-marketplace', component: <NFTMarketplace />},
   { path: '/blog', component: <Blog />},
   { path: '/blog-details', component: <BlogDetails />},
   { path: '/contact', component: <Contact />},
