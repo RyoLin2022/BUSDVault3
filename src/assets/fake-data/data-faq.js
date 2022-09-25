@@ -7,7 +7,7 @@ const dataFaq = [
     },
     {
         id: 2,
-        title: 'How do i get NFTs?',
+        title: 'How do I get NFTs?',
         content: 'You can get the NFT in our minting page, the NFT price is 200 BUSD for each',
     },
     {

@@ -32,7 +32,7 @@ function About(props) {
                                 <h4 className="title">{dataBlock.title}</h4>
                             </div>
                             <p>{dataBlock.desc}</p>
-                                <Button title="get Nfts" path='/' />
+                                <Button title="get Nfts" path='./nft-mint' />
                         </div>
                     </div>
                     <div className="col-xl-7 col-md-12">

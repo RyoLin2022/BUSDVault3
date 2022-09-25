@@ -45,7 +45,7 @@ function About(props) {
 
                     <div className="col-md-12">
                         <div className="btn-about" data-aos="fade-up" data-aos-duration="800">
-                            <Button title='get Nfts' path='#' />
+                            <Button title='get Nfts' path='../nft-mint' />
                         </div>
                     </div>
                 </div>

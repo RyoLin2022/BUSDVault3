@@ -10,7 +10,7 @@ const dataWork = [
         id: 2,
         numb: '02',
         title: 'Mint your collection',
-        text : 'The NFT can be minted as 0.1 BNB for each. The first function of our NFT is stacking, more functions are coming...'
+        text : 'The NFT can be minted as 200 BUSD for each. The first function of our NFT is stacking, more functions are coming...'
     },
     {
         id: 3,

@@ -11,7 +11,7 @@ let currentAccount = null;
 
 const Header = () => {
 
-    const [walletAddress, setWalletAddress] = useState('')
+    const [WalletAddress, setWalletAddress] = useState(null)
     async function changingAccount() {
         if (window.ethereum) {
             window.ethereum.on('accountsChanged', () => {
@@ -22,7 +22,7 @@ const Header = () => {
 
     useEffect(() => {
         changingAccount()
-    }, [walletAddress])
+    }, [WalletAddress])
 
     async function requestAccount() {
         console.log('Requesting account...')
@@ -30,9 +30,10 @@ const Header = () => {
             const accounts = await window.ethereum.request({
                 method: 'eth_requestAccounts',
             })
-            setWalletAddress(accounts[0])
             currentAccount = accounts[0]
+            setWalletAddress(accounts[0])
             sessionStorage.setItem('Account', currentAccount)
+            console.log("current account " + currentAccount)
             var btnConnect = document.getElementById('connect-btn')
             let lengthAcc = currentAccount.length
             btnConnect.value = currentAccount

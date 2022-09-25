@@ -3,6 +3,7 @@ import PageTitle from '../components/pagetitle';
 import { Link } from 'react-router-dom';
 import NFTContainer from './NFTContainer';
 import './NFTProfile.css';
+import NftItemDetails from './NftItemDetails';
 
 function NFTStaking(props) {
     let currentAccount = null;
@@ -19,6 +20,8 @@ function NFTStaking(props) {
         const data = await response.json()
         console.log(data)
         setNfts(data.result)
+        console.log(data.result);
+        console.log(data.result[0].token_id);
     }
 
     useEffect(() => {
@@ -47,17 +50,14 @@ function NFTStaking(props) {
                             <div className="item-details" data-aos="fade-left" data-aos-duration="800">
                                 <h5>Stake Your NFT</h5>
 
-                                <form action="#" id="subscribe-form">
-                                    <input type="email" placeholder="Number of NFT You Want to Mint" required="" id="subscribe-email" />
-                                    <button className="tf-button-st2 btn-effect" type="submit" id="subscribe-button"> <span className="effect">MINT</span></button>
-                                </form>
                                 <Link to="/nft-profile" className="tf-button btn-effect">
                                     <span className="boder-fade"></span>
-                                    <span className="effect">Check My NFTs</span>
+                                    <span className="effect">Stake All My NFTs</span>
                                 </Link>
                                 <br />
                                 <p>First Generation NFT</p>
-                                <p>The rest of the NFTs that haven't be minted would automatically burned after the mint sale ends</p>
+                                <p>You can use the above button to stack your NFTs by one click</p>
+                                <p>Or you can stake your NFT by clicking on the pictures below</p>
                                 <div className="list-product">
                                     <div className="box corner-box">
                                         <p>Total Minted</p>
@@ -92,6 +92,7 @@ function NFTStaking(props) {
             
             <PageTitle title='My NFTS' />
             <NFTContainer nfts={nfts} />
+            <NftItemDetails data = {nfts} />
         </div>
     );
 }
