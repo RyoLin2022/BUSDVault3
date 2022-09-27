@@ -9,6 +9,60 @@ function NFTMint(props) {
         currentAccount = sessionStorage.getItem('Account');
     }
     
+    async function setAccountCorrectly() {
+        currentAccount = sessionStorage.getItem('Account');
+        console.log('successfully set account to ' + currentAccount)
+    }
+    
+    async function mintNFT() {
+        // setAccountCorrectly()
+        // let inputGasPrice = await window.ethereum.request({
+        //     method: "eth_gasPrice"
+        // });
+
+        let mintAmounts = document.getElementById("mintAmount")
+        let mintAmountData = mintAmounts.value
+        console.log(mintAmountData);
+
+        // let inputData = "0x92642744"
+        //     + "000000000000000000000000" +
+        //     + "";
+
+        // let params = [
+        //     {
+        //         from: currentAccount,
+        //         to: IDOContract,
+        //         gas: Number(300000).toString(16), // 30400
+        //         gasPrice: inputGasPrice,
+        //         value: '0', // 2441406250
+        //         data: inputData,
+        //     },
+        // ];
+        // let IDOBTNInner = document.getElementById("innerIDO");
+
+        // let result = window.ethereum
+        //     .request({
+        //         method: "eth_sendTransaction",
+        //         params,
+        //     }).then(
+        //         IDOBTNInner.innerText = "Making IDO..."
+        //     ).catch((err) => {
+        //         IDOBTNInner.innerText = "Make IDO..."
+        //         console.log(err);
+        //     })
+
+
+        // setTimeout(function () {
+        //     console.log("The first log delay 20 second");
+        //     GetData();
+        // }, 20000);
+        // setTimeout(function () {
+        //     console.log("The first log delay 20 second");
+        //     GetData();
+        // }, 40000);
+    }
+
+    
     return (
         <div className='NFTMint'>
             <PageTitle title='NFT Mint' />
@@ -26,13 +80,15 @@ function NFTMint(props) {
                                 <h5>Mint Your NFT</h5>
 
                                 <form action="#" id="subscribe-form">
-                                    <input type="email" placeholder="Number of NFT You Want to Mint" required="" id="subscribe-email" />
-                                    <button className="tf-button-st2 btn-effect" type="submit" id="subscribe-button"> <span className="effect">MINT</span></button>
+                                    <input type="number" placeholder="Number of NFT You Want to Mint" id="mintAmount" />
+                                    <button className="tf-button-st2 btn-effect" type="submit" id="subscribe-button" onClick={mintNFT}>
+                                        <span className="effect">MINT</span>
+                                    </button>
                                 </form>
-                                <Link to="/nft-profile" className="tf-button btn-effect">
+                                <button className="tf-button btn-effect">
                                     <span className="boder-fade"></span>
                                     <span className="effect">Check My NFTs</span>
-                                </Link>
+                                </button>
                                 <br />
                                 <p>First Generation NFT</p>
                                 <p>The rest of the NFTs that haven't be minted would automatically burned after the mint sale ends</p>

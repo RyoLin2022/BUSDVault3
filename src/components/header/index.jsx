@@ -16,6 +16,7 @@ const Header = () => {
         if (window.ethereum) {
             window.ethereum.on('accountsChanged', () => {
                 requestAccount()
+                window.location.reload();
             })
         }
     }

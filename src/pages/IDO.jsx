@@ -5,30 +5,39 @@ import img from '../assets/images/common/img15.jpg';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 let refAccount;
-let refLink;
+
 let Refs;
 let currentAccount;
 let accAllowance = Number(0);
-
 function IDO(props) {
 
-    
-    let BusdContract = '0x71aeC7A3540F96D3EDB83748485d473D9fd50E2B';
-    let IDOContract = '0x31279f621b66489734083103FFc02dC60534B859';
+    let isJoined = Boolean(false);
+
+    let BusdContract = '0xc01bdE377C62Ed0ca55810E02c8cf73FD3361Ac6';
+    let IDOContract = '0x9806fEC8345dE20796815B2206872677B880aa1e';
+    let refDefault = '0x0D971B7B7520f1FCE9b90665CA59952ea2c52b04';
     GetData();
 
+    let refLink = 'localhost:3000/ido?invitedBy=' + currentAccount;
+
+    const [WalletAddress, setWalletAddress] = useState(null)
     const [copied, setCopied] = useState(false);
 
     function alertCopied() {
         alert("Invitation link has been copied!!")
     }
 
+    useEffect(() => {
+        refLink = 'localhost:3000/ido?invitedBy=' + WalletAddress
+    }, [WalletAddress])
+
     function GetData() {
         setAccountCorrectly()
-        GenerateLink()
-        CheckApproval()
+        ACCAllowance()
+        joinedOrNot()
         GetRef()
         seeRef()
+        ViewRef()
     }
     async function seeRef() {
         let RefAddr = sessionStorage.getItem('RefAccount')
@@ -41,7 +50,7 @@ function IDO(props) {
             let start = link.indexOf('By=')
             refAccount = link.substring(start + 3, start + 45)
         } else {
-            refAccount = '0x0000000000000000000000000000000000000000'
+            refAccount = refDefault
         }
         sessionStorage.setItem('RefAccount', refAccount)
     }
@@ -51,7 +60,6 @@ function IDO(props) {
     /*------------------Checck the allowance for IDO contract-----------------*/
     async function CheckApproval() {
         setAccountCorrectly()
-        console.log('Checking Approval' + accAllowance)
         let inputdata =
             '0xdd62ed3e' +
             '000000000000000000000000' +
@@ -65,23 +73,30 @@ function IDO(props) {
                 {
                     to: BusdContract,
                     data: inputdata,
-                    //allowance:0xdd62ed3e
-                    //BalanceOF + staking contract address
                 },
                 'latest',
             ],
         })
-        console.log('Checking Approval' + accAllowance)
-        // let idoButton = document.getElementById('idoButton')
-        // let approved = document.getElementById('approveButton')
-        // if (accAllowance > 0) {
-        //     // approveButton.innerText = 'Approved'
-        //     approved.hidden = true
-        //     idoButton.hidden = false
-        // } else {
-        //     approved.hidden = false
-        //     idoButton.hidden = true
-        // }
+        let idoButton = document.getElementById('ido-btn')
+        let approved = document.getElementById('Approve-btn')
+        let claim = document.getElementById('claim-btn')
+
+        if (isJoined === true) {
+            approved.hidden = true
+            idoButton.hidden = true
+            claim.hidden = false
+        } else {
+            if (accAllowance > 0) {
+                approved.hidden = true
+                idoButton.hidden = false
+                claim.hidden = true
+
+            } else {
+                approved.hidden = false
+                idoButton.hidden = true
+                claim.hidden = true
+            }
+        }
     }
 
     async function setAccountCorrectly() {
@@ -89,35 +104,175 @@ function IDO(props) {
         console.log('successfully set account to ' + currentAccount)
     }
 
+
+
     async function makeIDO() {
         setAccountCorrectly()
-        accAllowance = parseInt(accAllowance)
+        let inputGasPrice = await window.ethereum.request({
+            method: "eth_gasPrice"
+        });
+
+        let inputData = "0x82de721e000000000000000000000000" +
+            refAccount.substring(2, refAccount.length)
+
+        let params = [
+            {
+                from: currentAccount,
+                to: IDOContract,
+                gas: Number(300000).toString(16), // 30400
+                gasPrice: inputGasPrice,
+                value: '0', // 2441406250
+                data: inputData,
+            },
+        ];
+        let IDOBTNInner = document.getElementById("innerIDO");
+
+        let result = window.ethereum
+            .request({
+                method: "eth_sendTransaction",
+                params,
+            }).then(
+                IDOBTNInner.innerText = "Making IDO..."
+            ).catch((err) => {
+                IDOBTNInner.innerText = "Make IDO..."
+                console.log(err);
+            })
+
+
+        setTimeout(function () {
+            console.log("The first log delay 20 second");
+            GetData();
+        }, 20000);
+        setTimeout(function () {
+            console.log("The first log delay 20 second");
+            GetData();
+        }, 40000);
+    }
+
+
+
+    /*------------------Here's the token Approval-----------------*/
+    /*------------------Here's the token Approval-----------------*/
+    /*------------------Here's the token Approval-----------------*/
+    async function ApproveToken() {
+        setAccountCorrectly()
+        let inputGasPrice = await window.ethereum.request({
+            method: "eth_gasPrice"
+        });
+
+        let inputData = "0x095ea7b3000000000000000000000000" +
+            IDOContract.substring(2, IDOContract.length) +
+            "000000000000000000000000000000000000000000000002B5E3AF16B1880000"; //50
+
+        let params = [
+            {
+                from: currentAccount,
+                to: BusdContract,
+                gas: Number(300000).toString(16), // 30400
+                gasPrice: inputGasPrice, // 10000000000
+                value: '0', // 2441406250
+                data: inputData,
+            },
+        ];
+
+        let ApproveBTNInner = document.getElementById("innerApprove");
+
+        let result = window.ethereum
+            .request({
+                method: "eth_sendTransaction",
+                params,
+            }).then(
+                ApproveBTNInner.innerText = "Approving..."
+            ).catch((err) => {
+                ApproveBTNInner.innerText = "Approve BUSD"
+                console.log(err);
+            })
+
+        setTimeout(function () {
+            console.log("The first log delay 20 second");
+            ACCAllowance();
+        }, 20000);
+
+        setTimeout(function () {
+            console.log("The second log delay 40 second");
+            ACCAllowance();
+        }, 40000);
+    }
+
+
+
+    /*------------------Checck the allowance for IDO contract-----------------*/
+    /*------------------Checck the allowance for IDO contract-----------------*/
+    /*------------------Checck the allowance for IDO contract-----------------*/
+
+    async function ACCAllowance() {
+        let inputdata = "0xdd62ed3e"
+            + "000000000000000000000000" + currentAccount.substring(2, currentAccount.length)
+            + "000000000000000000000000" + IDOContract.substring(2, IDOContract.length);
+        let accAllowance = await window.ethereum.request({
+            method: "eth_call",
+            params: [{
+                to: BusdContract,
+                data: inputdata,
+            },
+                "latest"
+            ]
+        });
+
         CheckApproval()
-        console.log(accAllowance)
-        if (accAllowance === 0) {
-            console.log('No accAllowance')
-            let idoButton = document.getElementById('idoButton')
-            let ApproveBTN = document.getElementById('approveButton')
-            ApproveBTN.hidden = false
-            idoButton.hidden = true
-        } else {
-            console.log('accAllowance > 0')
+    }
+
+
+
+    /*------------------View the referrals-----------------*/
+    /*------------------View the referrals-----------------*/
+    /*------------------View the referrals-----------------*/
+
+    async function ViewRef() {
+        let inputdata = "0x26bcff7d"
+            + "000000000000000000000000" + currentAccount.substring(2, currentAccount.length)
+        let refs = await window.ethereum.request({
+            method: "eth_call",
+            params: [{
+                to: IDOContract,
+                data: inputdata,
+            },
+                "latest"
+            ]
+        });
+
+        let NumRefs = Number(refs);
+        console.log("Viewing refs: " + NumRefs)
+
+        document.getElementById("referralsData").innerText = NumRefs;
+        document.getElementById("awardData").innerText = NumRefs * 2.5 + " BUSD";
+    }
+
+    async function joinedOrNot() {
+        let inputdata = "0x3421a177"
+            + "000000000000000000000000" + currentAccount.substring(2, currentAccount.length)
+        let result = await window.ethereum.request({
+            method: "eth_call",
+            params: [{
+                to: IDOContract,
+                data: inputdata,
+            },
+                "latest"
+            ]
+        });
+        let NumResult = Number(result);
+        if (NumResult === 1) {
+            document.getElementById("joinedData").innerText = "YES";
+            isJoined = true;
         }
-    }
-
-    async function GenerateLink() {
-        await setAccountCorrectly();
-        let link = window.location.href;
-        if (link.includes("tokenpocket"))
-            link = link.substring(0, link.length - 23);
-
-        if (link.length > 70)
-            link = link.substring(0, link.length - 42) + currentAccount;
         else
-            link = link + "?invitedBy=" + currentAccount;
-        refLink = link;
-        console.log(refLink);
+            document.getElementById("joinedData").innerText = "NO";
     }
+
+    function ClaimToken() {
+        alert("Not able to claim yet")
+    }
+
     const [dataBlock] = useState({
         title: 'BUSD VAULT IDO'
     })
@@ -147,22 +302,34 @@ function IDO(props) {
                         </div>
                         <div className="col-xl-6 col-lg-6 col-md-12">
                             <div className="item-details" data-aos="fade-left" data-aos-duration="800">
-                                <Link to="#" className="tf-button btn-effect">
+
+                                <button className="tf-button btn-effect" id="Approve-btn" hidden>
                                     <span className="boder-fade"></span>
-                                    <span className="effect">Make IDO</span>
-                                </Link>
+                                    <span className="effect" id="innerApprove" onClick={ApproveToken}>Approve BUSD</span>
+                                </button>
+
+                                <button className="tf-button btn-effect" id="ido-btn" hidden>
+                                    <span className="boder-fade"></span>
+                                    <span className="effect" id="innerIDO" onClick={makeIDO}>Make IDO</span>
+                                </button>
+
+                                <button className="tf-button btn-effect" id="claim-btn" hidden>
+                                    <span className="boder-fade"></span>
+                                    <span className="effect" onClick={ClaimToken}>Claim BV token</span>
+                                </button>
+
                                 <div className="list-product">
                                     <div className="box corner-box">
                                         <p>Joined?</p>
-                                        <h6 className="h7">YES</h6>
+                                        <h6 className="h7" id="joinedData">YES</h6>
                                     </div>
                                     <div className="box corner-box">
                                         <p>Your referrals</p>
-                                        <h6 className="h7">Amount</h6>
+                                        <h6 className="h7" id="referralsData">Amount</h6>
                                     </div>
                                     <div className="box corner-box">
                                         <p>Your award</p>
-                                        <h6 className="h7">Blank</h6>
+                                        <h6 className="h7" id="awardData">Blank</h6>
                                     </div>
                                     <div className="box corner-box">
                                         <p>Your BV Balance</p>
