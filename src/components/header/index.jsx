@@ -11,12 +11,16 @@ let currentAccount = null;
 
 const Header = () => {
 
+    connectWallet();
+
     const [WalletAddress, setWalletAddress] = useState(null)
     async function changingAccount() {
         if (window.ethereum) {
             window.ethereum.on('accountsChanged', () => {
+                window.sessionStorage.removeItem('Account');
                 requestAccount()
                 window.location.reload();
+                requestAccount()
             })
         }
     }
@@ -55,7 +59,7 @@ const Header = () => {
         if (typeof window.ethereum !== 'undefined') {
             await requestAccount()
             const provider = new ethers.providers.Web3Provider(window.ethereum)
-            alert('Wallet connected successfully!')
+            console.log('Wallet connected successfully!')
         } else {
             alert('Please install an injected Web3 wallet')
         }

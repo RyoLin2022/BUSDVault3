@@ -1,6 +1,6 @@
 
-import img1 from '../images/logo/logo1.png'
-import img2 from '../images/logo/logo2.png'
+import img1 from '../images/logo/BSC.png'
+import img2 from '../images/logo/pancakeswap.png'
 import img3 from '../images/logo/logo3.png'
 import img4 from '../images/logo/logo4.png'
 import img5 from '../images/logo/logo5.png'

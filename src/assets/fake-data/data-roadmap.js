@@ -1,7 +1,7 @@
 const dataRoadmap = [
     {
         id: 1,
-        time: 'Q3 2022',
+        time: 'Q4 2022',
         list: [
             {
                 text: 'Release website and logo'

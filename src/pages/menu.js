@@ -56,43 +56,43 @@ const menus = [
             },
         ]
     },
-    {
-        id: 4,
-        name: 'Nft',
-        links: '#',
-        namesub: [
-            {
-                id: 1,
-                sub: 'Nft Mint',
-                links: '/nft-mint'
-            },
-            {
-                id: 2,
-                sub: 'Nft Staking',
-                links: '/nft-staking'
-            },
-            {
-                id: 3,
-                sub: 'Nft Profile',
-                links: '/nft-profile'
-            },
-            {
-                id: 4,
-                sub: 'Nft Item',
-                links: '/nft-item'
-            },
-            {
-                id: 5,
-                sub: 'Nft Item Details',
-                links: '/nft-item-details'
-            },
-            {
-                id: 6,
-                sub: 'Nft Marketplace',
-                links: '/nft-marketplace'
-            },
-        ],
-    },
+    // {
+    //     id: 4,
+    //     name: 'Nft',
+    //     links: '#',
+    //     namesub: [
+    //         {
+    //             id: 1,
+    //             sub: 'Nft Mint',
+    //             links: '/nft-mint'
+    //         },
+    //         {
+    //             id: 2,
+    //             sub: 'Nft Staking',
+    //             links: '/nft-staking'
+    //         },
+    //         {
+    //             id: 3,
+    //             sub: 'Nft Profile',
+    //             links: '/nft-profile'
+    //         },
+    //         {
+    //             id: 4,
+    //             sub: 'Nft Item',
+    //             links: '/nft-item'
+    //         },
+    //         {
+    //             id: 5,
+    //             sub: 'Nft Item Details',
+    //             links: '/nft-item-details'
+    //         },
+    //         {
+    //             id: 6,
+    //             sub: 'Nft Marketplace',
+    //             links: '/nft-marketplace'
+    //         },
+    //     ],
+    // },
     {
         id: 5,
         name: 'Vault',

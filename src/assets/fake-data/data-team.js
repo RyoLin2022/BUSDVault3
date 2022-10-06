@@ -1,5 +1,5 @@
-import img1 from '../images/common/team6.png';
-import img2 from '../images/common/team7.png';
+import img1 from '../images/common/teamRyo.png';
+import img2 from '../images/common/teamDavid.png';
 import img3 from '../images/common/team8.png';
 
 const dataTeam = [
@@ -19,55 +19,12 @@ const dataTeam = [
     {
         id: 2,
         img: img2,
-        name: 'Devon Lane',
-        position: 'Blockchain Developer',
+        name: 'David Lee',
+        position: 'COO',
         listsocial: [
             {
                 id: 1,
                 icon: 'fab fa-twitter',
-                link: '#'
-            },
-            {
-                id: 2,
-                icon: 'fab fa-facebook-f',
-                link: '#'
-            },
-            {
-                id: 3,
-                icon: 'fa fa-paper-plane',
-                link: '#'
-            },
-            {
-                id: 4,
-                icon: 'fab fa-reddit',
-                link: '#'
-            },
-        ]
-    },
-    {
-        id: 3,
-        img: img3,
-        name: 'Ralph Edwards',
-        position: 'Backend Engineer',
-        listsocial: [
-            {
-                id: 1,
-                icon: 'fab fa-twitter',
-                link: '#'
-            },
-            {
-                id: 2,
-                icon: 'fab fa-facebook-f',
-                link: '#'
-            },
-            {
-                id: 3,
-                icon: 'fa fa-paper-plane',
-                link: '#'
-            },
-            {
-                id: 4,
-                icon: 'fab fa-reddit',
                 link: '#'
             },
         ]

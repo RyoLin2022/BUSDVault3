@@ -11,10 +11,11 @@ let currentAccount;
 let accAllowance = Number(0);
 function IDO(props) {
 
-    let isJoined = Boolean(false);
+    let isJoined = Boolean('');
 
-    let BusdContract = '0xc01bdE377C62Ed0ca55810E02c8cf73FD3361Ac6';
-    let IDOContract = '0x9806fEC8345dE20796815B2206872677B880aa1e';
+    let BusdContract = '0x5B3B6215454B42682126A7dc3225d199F37a2F67';
+    let IDOContract = '0x1Fb5b22F50c60bD1610edB6656DF44c00ee27A7f';
+    let BUSDVaultContract = '';
     let refDefault = '0x0D971B7B7520f1FCE9b90665CA59952ea2c52b04';
     GetData();
 
@@ -27,18 +28,19 @@ function IDO(props) {
         alert("Invitation link has been copied!!")
     }
 
-    useEffect(() => {
-        refLink = 'localhost:3000/ido?invitedBy=' + WalletAddress
-    }, [WalletAddress])
+    // useEffect(() => {
+    //     refLink = 'localhost:3000/ido?invitedBy=' + WalletAddress
+    // }, [WalletAddress])
 
-    function GetData() {
-        setAccountCorrectly()
-        ACCAllowance()
-        joinedOrNot()
-        GetRef()
-        seeRef()
-        ViewRef()
+    async function GetData() {
+        await setAccountCorrectly()
+        await joinedOrNot()
+        await ACCAllowance()
+        await GetRef()
+        await seeRef()
+        await ViewRef()
     }
+
     async function seeRef() {
         let RefAddr = sessionStorage.getItem('RefAccount')
         console.log('seeRef : ' + RefAddr)
@@ -81,6 +83,7 @@ function IDO(props) {
         let approved = document.getElementById('Approve-btn')
         let claim = document.getElementById('claim-btn')
 
+        console.log("view isJoined : " + isJoined)
         if (isJoined === true) {
             approved.hidden = true
             idoButton.hidden = true
@@ -102,6 +105,11 @@ function IDO(props) {
     async function setAccountCorrectly() {
         currentAccount = sessionStorage.getItem('Account');
         console.log('successfully set account to ' + currentAccount)
+        setTimeout(function () {
+            console.log("The first log delay 2 second");
+            refLink = 'localhost:3000/ido?invitedBy=' + currentAccount;
+            console.log(refLink);
+        }, 2000);
     }
 
 
@@ -192,7 +200,7 @@ function IDO(props) {
             console.log("The first log delay 20 second");
             ACCAllowance();
         }, 20000);
-
+        
         setTimeout(function () {
             console.log("The second log delay 40 second");
             ACCAllowance();
@@ -330,18 +338,6 @@ function IDO(props) {
                                     <div className="box corner-box">
                                         <p>Your award</p>
                                         <h6 className="h7" id="awardData">Blank</h6>
-                                    </div>
-                                    <div className="box corner-box">
-                                        <p>Your BV Balance</p>
-                                        <h6 className="h7">Blank</h6>
-                                    </div>
-                                    <div className="box corner-box">
-                                        <p>BUSD In IDO</p>
-                                        <h6 className="h7">Blank</h6>
-                                    </div>
-                                    <div className="box corner-box">
-                                        <p>Exchange Rate</p>
-                                        <h6 className="h7">Blank</h6>
                                     </div>
                                 </div>
                             </div>

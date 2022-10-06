@@ -28,7 +28,7 @@ function HomeOne(props) {
 
         <About data={dataAbout} />
 
-        <Project data={dataProject} />
+        {/* <Project data={dataProject} /> */}
 
         <RoadMap data={dataRoadmap} />
 

@@ -16,11 +16,14 @@ function About(props) {
         {
             subtitle : 'About us',
             title: 'What is BUSD Vault?',
-            desc : 'BUSD Vault(BV) is a token that stores BUSD in a vault, the BUSD is from the tax of the BV transactions.'
-            +'The mechanism keep burning BV token itself and charging BUSD to the vault'
+            desc : 'BUSD Vault(BV) is a token that stores BUSD in a vault, the BUSD is from the tax of the BVault transactions.'
+            +'The mechanism keep burning BV token itself and charging BUSD to the vault.'
+            +'The price of the token would be more and more stabilized because of the vault.'
         }
     )
-
+    function makeAlert() {
+        alert("The NFT is under construction!!")
+    }
     return (
         <section className="tf-section tf-about">
             <div className="container">
@@ -32,7 +35,7 @@ function About(props) {
                                 <h4 className="title">{dataBlock.title}</h4>
                             </div>
                             <p>{dataBlock.desc}</p>
-                                <Button title="get Nfts" path='./nft-mint' />
+                                {/* <Button title="get Nfts" path='./nft-mint' /> */}
                         </div>
                     </div>
                     <div className="col-xl-7 col-md-12">

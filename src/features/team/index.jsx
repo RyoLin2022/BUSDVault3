@@ -21,7 +21,7 @@ function Team(props) {
         title: 'Meet our TEAM',
         desc: 'Who we are',
         text: 'We are blockchain lovers. The developer has many experiences of smart contract.'
-        +' The market is in bear market. We develop a new mechanism, which is our BUSD Vault. The vault can give our holders convidence.'
+        +' The market is in bear market. We develop a new mechanism, which is our BUSD Vault. The vault can give our holders convidence of the price. The holders don not have to worry about the price'
     })
     return (
         <section className="tf-section tf-team">
