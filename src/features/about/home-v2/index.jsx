@@ -16,7 +16,9 @@ function About(props) {
         {
             subtitle : 'About us',
             title: 'What is BUSD Vault?',
-            desc : 'BUSD Vault(BV) is a token that stores BUSD in a vault, the BUSD is from the tax of the BV transactions.The mechanism keep burning BV token itself and charging BUSD to the vault'
+            desc : 'BUSD Vault(BV) is a token that stores BUSD in a vault, the BUSD is from the tax of the BVault transactions.'
+            +'The mechanism keep burning BV token itself and charging BUSD to the vault.'
+            +'The price of the token would be more and more stabilized because of the vault.'
         }
     )
 
@@ -45,7 +47,7 @@ function About(props) {
 
                     <div className="col-md-12">
                         <div className="btn-about" data-aos="fade-up" data-aos-duration="800">
-                            <Button title='get Nfts' path='../nft-mint' />
+                            {/* <Button title='get Nfts' path='../nft-mint' /> */}
                         </div>
                     </div>
                 </div>

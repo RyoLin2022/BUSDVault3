@@ -1,10 +1,10 @@
 
 import img1 from '../images/logo/BSC.png'
 import img2 from '../images/logo/pancakeswap.png'
-import img3 from '../images/logo/logo3.png'
-import img4 from '../images/logo/logo4.png'
-import img5 from '../images/logo/logo5.png'
-import img6 from '../images/logo/logo6.png'
+import img3 from '../images/logo/chainLink.png'
+import img4 from '../images/logo/tofu2.png'
+import img5 from '../images/logo/cglogo.png'
+import img6 from '../images/logo/cmclogo.png'
 import img7 from '../images/logo/logo7.png'
 import img8 from '../images/logo/logo8.png'
 import img9 from '../images/logo/logo9.png'
@@ -36,42 +36,42 @@ const dataPartner = [
     {
         img: img6,
     },
-    {
-        img: img7,
-    },
-    {
-        img: img8,
-    },
-    {
-        img: img9,
-    },
-    {
-        img: img10,
-    },
-    {
-        img: img11,
-    },
-    {
-        img: img12,
-    },
-    {
-        img: img13,
-    },
-    {
-        img: img14,
-    },
-    {
-        img: img15,
-    },
-    {
-        img: img16,
-    },
-    {
-        img: img17,
-    },
-    {
-        img: img18,
-    },
+    // {
+    //     img: img7,
+    // },
+    // {
+    //     img: img8,
+    // },
+    // {
+    //     img: img9,
+    // },
+    // {
+    //     img: img10,
+    // },
+    // {
+    //     img: img11,
+    // },
+    // {
+    //     img: img12,
+    // },
+    // {
+    //     img: img13,
+    // },
+    // {
+    //     img: img14,
+    // },
+    // {
+    //     img: img15,
+    // },
+    // {
+    //     img: img16,
+    // },
+    // {
+    //     img: img17,
+    // },
+    // {
+    //     img: img18,
+    // },
 ]
 
 export default dataPartner;

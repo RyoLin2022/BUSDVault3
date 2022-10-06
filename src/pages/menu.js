@@ -21,26 +21,26 @@ const menus = [
                 sub: 'About',
                 links: '/about-v1'
             },
-            {
-                id: 3,
-                sub: 'Coming Soon',
-                links: '/coming-soon'
-            },
+            // {
+            //     id: 3,
+            //     sub: 'Coming Soon',
+            //     links: '/coming-soon'
+            // },
             {
                 id: 4,
                 sub: 'Team Details',
                 links: '/team-details'
             },
-            {
-                id: 5,
-                sub: 'FAQ',
-                links: '/faq'
-            },
-            {
-                id: 6,
-                sub: '404',
-                links: '/404'
-            },
+            // {
+            //     id: 5,
+            //     sub: 'FAQ',
+            //     links: '/faq'
+            // },
+            // {
+            //     id: 6,
+            //     sub: '404',
+            //     links: '/404'
+            // },
 
         ]
     },

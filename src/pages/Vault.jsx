@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PageTitle from '../components/pagetitle';
 import { Link } from 'react-router-dom';
 let currentAccount
@@ -153,9 +153,9 @@ function Vault(props) {
             let inputGasPrice = await window.ethereum.request({
                 method: "eth_gasPrice"
             });
-            
+
             let InputValue = document.getElementById("tokenAmount");
-            let InputAmount = InputValue.value * Math.pow(10,18);
+            let InputAmount = InputValue.value * Math.pow(10, 18);
 
             console.log("You are redeeming BUSD by burning BVault token with amount of : " + InputAmount);
 
@@ -164,7 +164,7 @@ function Vault(props) {
             console.log(HexInputAmount);
             let InputAmountLength = HexInputAmount.length;
 
-            let inputData = "0xfe9be086" + zeroString.substring(0,64 - InputAmountLength) + HexInputAmount;
+            let inputData = "0xfe9be086" + zeroString.substring(0, 64 - InputAmountLength) + HexInputAmount;
 
             let params = [
                 {
@@ -215,6 +215,10 @@ function Vault(props) {
     async function LoadAccount() {
         currentAccount = sessionStorage.getItem('Account');
     }
+    
+    const [dataBlock] = useState({
+        title: 'HOW THE VAULT WORKS'
+    })
 
     return (
         <div className='vault'>
@@ -224,9 +228,14 @@ function Vault(props) {
                 <div className="vault-container">
                     <div className="row">
                         <div className="col-xl-5 col-lg-5 col-md-5">
-                            <div className="image-details" data-aos="fade-right" data-aos-duration="800">
-                                <img src={require('../assets/images/common/team12.png')} alt="" />
+                            <div className="item-details" data-aos="fade-left" data-aos-duration="800">
+                                <h4 className="tf-title st2 mb-60 sub-title">{dataBlock.title}</h4>
+                                <p>You need to approve the BVault token to the vault contract</p>
+                                <p>You can redeem BUSD by burning your BVault</p>
                             </div>
+                            {/* <div className="image-details" data-aos="fade-right" data-aos-duration="800">
+                                <img src={require('../assets/images/logo/preload.png')} alt="" />
+                            </div> */}
                         </div>
                         <div className="col-xl-6 col-lg-6 col-md-12">
                             <div className="item-details" data-aos="fade-left" data-aos-duration="800">
