@@ -124,7 +124,7 @@ const Header = () => {
                         <span className="effect" id="connect-btn">Connect Wallet</span>
                     </button>
 
-                    <div className={`mobile-button ${menuActive ? 'active' : ''}`} onClick={handleMenuActive}><span></span></div>
+                    {/* <div className={`mobile-button ${menuActive ? 'active' : ''}`} onClick={handleMenuActive}><span></span></div> */}
                 </div>
             </div>
         </header>
