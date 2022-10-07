@@ -97,11 +97,11 @@ const Header = () => {
                     <nav id="main-nav" className={menuActive ? 'main-nav active' : 'main-nav'}>
                         <ul id="menu-primary-menu" className="menu">
 
-                            {
+                            {/* {
                                 menus.map((data, idx) => (
-                                    <li key={idx} onClick={() => handleDropdown(idx)} className={`menu-item ${data.namesub ? 'menu-item-has-children' : ''} ${activeIndex === idx ? 'active' : ''}`}
+                                    <li key={idx} onClick={() => handleDropdown(idx)} className={`menu-item ${data.namesub ? 'menu-item-has-children' : ''} ${activeIndex === idx ? 'active' : ''}`} */}
 
-                                    >
+                                    {/* > */}
                                         {/* <Link to={data.links}>{data.name}</Link>
                                         {
                                             data.namesub &&
@@ -113,10 +113,10 @@ const Header = () => {
                                                 }
                                             </ul>
                                         } */}
-
+{/* 
                                     </li>
                                 ))
-                            }
+                            } */}
                         </ul>
                     </nav>
                     <button className="tf-button btn-effect" onClick={connectWallet}>
