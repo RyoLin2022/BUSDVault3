@@ -75,7 +75,7 @@ const Header = () => {
         }
     }, []);
 
-    const [menuActive, setMenuActive] = useState(null);
+    const [menuActive, setMenuActive] = useState(false);
 
     const handleMenuActive = () => {
         setMenuActive(!menuActive);
@@ -94,7 +94,7 @@ const Header = () => {
                     <div className="header__logo">
                         <NavLink to="/"><img src={logo} alt="Crybox" /></NavLink>
                     </div>
-                    <nav id="main-nav" className={`main-nav ${menuActive ? 'active' : ''}`} >
+                    <nav id="main-nav" className={menuActive ? 'main-nav active' : 'main-nav '} >
                         <ul id="menu-primary-menu" className="menu">
 
                             {
@@ -124,8 +124,7 @@ const Header = () => {
                         <span className="effect" id="connect-btn">Connect Wallet</span>
                     </button>
 
-                    {/* <div className={`mobile-button ${menuActive ? 'active' : ''}`} onClick={handleMenuActive}><span></span></div> */}
-                    <div className='mobile-button active' onClick={handleMenuActive}><span></span></div>
+                    <div className={menuActive ? 'mobile-button active' : 'mobile-button'} onClick={handleMenuActive}><span></span></div>
                 </div>
             </div>
         </header>
