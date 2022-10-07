@@ -5,9 +5,13 @@ let currentAccount
 function Vault(props) {
     let max = 0;
     let accAllowance = Number(0);
+    let EXRate;
     let VaultContract = '0xc273e035499e3F9D4cbB38d7dEe5CB51A61b4978';
     let BUSDVaultContract = '0x5CaF80B6189F605fa46b09DBBC0BA8f7e752932a';
     let BusdContract = '0x5B3B6215454B42682126A7dc3225d199F37a2F67';
+
+    const [inputAmount, setAmount] = useState('')
+
 
     GetData();
 
@@ -65,7 +69,9 @@ function Vault(props) {
                 "latest"
             ]
         });
+
         rate = (parseInt(rate) * 100 / Math.pow(10, 18)).toFixed(1)
+        EXRate = rate/100;
         document.getElementById("vaultRate").innerText = rate + "%";
     }
 
@@ -104,12 +110,10 @@ function Vault(props) {
             })
 
         setTimeout(function () {
-            console.log("The first log delay 20 second");
             CheckApproval();
         }, 20000);
 
         setTimeout(function () {
-            console.log("The second log delay 40 second");
             CheckApproval();
         }, 40000);
     }
@@ -133,7 +137,6 @@ function Vault(props) {
                 'latest',
             ],
         })
-        console.log("The account allowance is : " + accAllowance)
         let approved = document.getElementById('Approve-btn')
 
         if (accAllowance > 0) {
@@ -161,7 +164,6 @@ function Vault(props) {
 
             let HexInputAmount = Number(InputAmount).toString(16);
             let zeroString = "0000000000000000000000000000000000000000000000000000000000000000";
-            console.log(HexInputAmount);
             let InputAmountLength = HexInputAmount.length;
 
             let inputData = "0xfe9be086" + zeroString.substring(0, 64 - InputAmountLength) + HexInputAmount;
@@ -191,12 +193,10 @@ function Vault(props) {
 
 
             setTimeout(function () {
-                console.log("The first log delay 20 second");
                 GetData();
                 RedeemBTNInner.innerText = "Redeem BUSD"
             }, 20000);
             setTimeout(function () {
-                console.log("The first log delay 20 second");
                 GetData();
                 RedeemBTNInner.innerText = "Redeem BUSD"
             }, 40000);
@@ -205,9 +205,7 @@ function Vault(props) {
 
     async function setMaxValue() {
         let InputValue = document.getElementById("tokenAmount");
-        console.log("max is : " + max)
         max = parseInt(max) / Math.pow(10, 18);
-        console.log("max is : " + max)
         InputValue.value = max;
     }
 
@@ -215,7 +213,14 @@ function Vault(props) {
     async function LoadAccount() {
         currentAccount = sessionStorage.getItem('Account');
     }
-    
+
+    function getBVValue() {
+        let BVaultValue = document.getElementById("BVValue");
+        let InputValue = document.getElementById("tokenAmount");
+        
+        BVaultValue.innerText = InputValue.value * EXRate + " BUSD";
+    }
+
     const [dataBlock] = useState({
         title: 'HOW THE VAULT WORKS'
     })
@@ -242,7 +247,18 @@ function Vault(props) {
                                 <h5>The Vault</h5>
 
                                 <div id="subscribe-form">
-                                    <input type="number" placeholder="Number of token" id="tokenAmount" />
+                                    <input
+                                        type="number"
+                                        placeholder="Number of token"
+                                        id="tokenAmount"
+                                        value={inputAmount}
+                                        onChange={
+                                            e => {
+                                                setAmount(e.target.value)
+                                                getBVValue()
+                                            }
+                                        }
+                                    />
                                     <button className="tf-button-st2 btn-effect" onClick={setMaxValue}>
                                         <span className="effect">Max</span>
                                     </button>
@@ -272,6 +288,10 @@ function Vault(props) {
                                     <div className="box corner-box">
                                         <p>Exchange Rate</p>
                                         <h6 className="h7" id="vaultRate">0.0</h6>
+                                    </div>
+                                    <div className="box corner-box">
+                                        <p>Value of Input</p>
+                                        <h6 className="h7" id="BVValue">0.0</h6>
                                     </div>
                                 </div>
                             </div>
