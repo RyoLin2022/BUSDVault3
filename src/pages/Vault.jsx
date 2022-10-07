@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import PageTitle from '../components/pagetitle';
 import { Link } from 'react-router-dom';
+import swal from 'sweetalert';
+
 let currentAccount
 function Vault(props) {
     let max = 0;
@@ -98,7 +100,7 @@ function Vault(props) {
 
         let ApproveBTNInner = document.getElementById("innerApprove");
 
-        let result = window.ethereum
+        let result = await window.ethereum
             .request({
                 method: "eth_sendTransaction",
                 params,
@@ -108,6 +110,13 @@ function Vault(props) {
                 ApproveBTNInner.innerText = "Approve BVault"
                 console.log(err);
             })
+            
+            if(result === undefined) {
+                console.log("XXX")
+                swal("Oops!", "You did not make the token approval", "error")
+            } else {
+                swal("Good job!", "You can now redeem BUSD by burning BVault!!", "success")
+            }
 
         setTimeout(function () {
             CheckApproval();
@@ -237,6 +246,7 @@ function Vault(props) {
                                 <h4 className="tf-title st2 mb-60 sub-title">{dataBlock.title}</h4>
                                 <p>You need to approve the BVault token to the vault contract</p>
                                 <p>You can redeem BUSD by burning your BVault</p>
+                                <p>You can see the value of the token in the "Value of Input" box</p>
                             </div>
                             {/* <div className="image-details" data-aos="fade-right" data-aos-duration="800">
                                 <img src={require('../assets/images/logo/preload.png')} alt="" />

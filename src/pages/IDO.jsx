@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PageTitle from '../components/pagetitle';
 import { Link } from 'react-router-dom';
 import img from '../assets/images/common/img15.jpg';
+import swal from 'sweetalert';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 let refAccount;
@@ -19,13 +20,13 @@ function IDO(props) {
     let refDefault = '0x0D971B7B7520f1FCE9b90665CA59952ea2c52b04';
     GetData();
 
-    let refLink = 'localhost:3000/ido?invitedBy=' + currentAccount;
+    let refLink = 'busdvault.com/ido?invitedBy=' + currentAccount;
 
     const [WalletAddress, setWalletAddress] = useState(null)
     const [copied, setCopied] = useState(false);
 
     function alertCopied() {
-        alert("Invitation link has been copied!!")
+        swal("Good job!", "Your link : " + refLink + " has been copied!!", "success")
     }
 
     // useEffect(() => {
@@ -107,7 +108,7 @@ function IDO(props) {
         console.log('successfully set account to ' + currentAccount)
         setTimeout(function () {
             console.log("The first log delay 2 second");
-            refLink = 'localhost:3000/ido?invitedBy=' + currentAccount;
+            refLink = 'busdvault.com/ido?invitedBy=' + currentAccount;
             console.log(refLink);
         }, 2000);
     }
@@ -135,17 +136,24 @@ function IDO(props) {
         ];
         let IDOBTNInner = document.getElementById("innerIDO");
 
-        let result = window.ethereum
+        let result = await window.ethereum
             .request({
                 method: "eth_sendTransaction",
                 params,
             }).then(
                 IDOBTNInner.innerText = "Making IDO..."
             ).catch((err) => {
-                IDOBTNInner.innerText = "Make IDO..."
+                IDOBTNInner.innerText = "Make IDO"
                 console.log(err);
             })
-
+        
+            console.log("IDO result " + result);
+            if(result === undefined) {
+                console.log("XXX")
+                swal("Oops!", "You did not make the IDO", "error")
+            } else {
+                swal("Good job!", "You have successfully made the IDO!!", "success")
+            }
 
         setTimeout(function () {
             console.log("The first log delay 20 second");
@@ -185,7 +193,7 @@ function IDO(props) {
 
         let ApproveBTNInner = document.getElementById("innerApprove");
 
-        let result = window.ethereum
+        let result = await window.ethereum
             .request({
                 method: "eth_sendTransaction",
                 params,
@@ -195,6 +203,15 @@ function IDO(props) {
                 ApproveBTNInner.innerText = "Approve BUSD"
                 console.log(err);
             })
+
+            console.log("The result of approve token is " + result)
+            
+            if(result === undefined) {
+                console.log("XXX")
+                swal("Oops!", "You did not make the token approval", "error")
+            } else {
+                swal("Good job!", "You have successfully made the token approval!!", "success")
+            }
 
         setTimeout(function () {
             console.log("The first log delay 20 second");

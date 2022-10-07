@@ -61,7 +61,7 @@ const Header = () => {
             const provider = new ethers.providers.Web3Provider(window.ethereum)
             console.log('Wallet connected successfully!')
         } else {
-            alert('Please install an injected Web3 wallet')
+            console.log('Please install an injected Web3 wallet')
         }
     }
 
