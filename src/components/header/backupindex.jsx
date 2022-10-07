@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 import { Link, NavLink } from 'react-router-dom';
-// import menus from '../../pages/menu';
-import menus from './menu';
+import menus from '../../pages/menu';
+
 import { ethers } from 'ethers'
 import './styles.scss';
 import logo from '../../assets/images/logo/logo.png'
