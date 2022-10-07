@@ -99,7 +99,9 @@ const Header = () => {
 
                             {
                                 menus.map((data, idx) => (
-                                    <li key={idx} onClick={() => handleDropdown(idx)} className={`menu-item ${data.namesub ? 'menu-item-has-children' : ''} ${activeIndex === idx ? 'active' : ''}`}
+                                    <li key={idx} 
+                                    onClick={() => handleDropdown(idx)}
+                                    className={`menu-item ${data.namesub ? 'menu-item-has-children' : ''} ${activeIndex === idx ? 'active' : ''}`}
 
                                     >
                                         <Link to={data.links}>{data.name}</Link>

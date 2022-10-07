@@ -27,7 +27,7 @@ const menus = [
             //     links: '/coming-soon'
             // },
             {
-                id: 4,
+                id: 2,
                 sub: 'Team Details',
                 links: '/team-details'
             },
@@ -94,12 +94,12 @@ const menus = [
     //     ],
     // },
     {
-        id: 5,
+        id: 4,
         name: 'Vault',
         links: '/vault'
     },
     {
-        id: 6,
+        id: 5,
         name: 'IDO',
         links: '/ido'
     },
