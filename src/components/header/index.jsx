@@ -103,7 +103,7 @@ const Header = () => {
 
                                     >
                                         <Link to={data.links}>{data.name}</Link>
-                                        {
+                                        {/* {
                                             data.namesub &&
                                             <ul className="sub-menu">
                                                 {
@@ -112,7 +112,7 @@ const Header = () => {
                                                     ))
                                                 }
                                             </ul>
-                                        }
+                                        } */}
 
                                     </li>
                                 ))
