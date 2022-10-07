@@ -125,6 +125,7 @@ const Header = () => {
                     </button>
 
                     {/* <div className={`mobile-button ${menuActive ? 'active' : ''}`} onClick={handleMenuActive}><span></span></div> */}
+                    <div className='mobile-button active' onClick={handleMenuActive}><span></span></div>
                 </div>
             </div>
         </header>
