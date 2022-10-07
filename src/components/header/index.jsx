@@ -77,10 +77,7 @@ const Header = () => {
 
     const [menuActive, setMenuActive] = useState(false);
 
-    const handleMenuActive = () => {
-        setMenuActive(!menuActive);
-    };
-
+    const handleMenuActive = () => setMenuActive(!menuActive);
 
     const [activeIndex, setActiveIndex] = useState(null);
     const handleDropdown = index => {
