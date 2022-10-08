@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-
+import * as AiIcons from "react-icons/ai";
+import * as FaIcons from "react-icons/fa";
 import { Link, NavLink } from 'react-router-dom';
 // import menus from '../../pages/menu';
 import menus from './menu';
@@ -91,15 +92,25 @@ const Header = () => {
                     <div className="header__logo">
                         <NavLink to="/"><img src={logo} alt="Crybox" /></NavLink>
                     </div>
+                    <div className="navbar">
+                        <Link to="#" className="menu-bars">
+                            <FaIcons.FaBars onClick={handleMenuActive} />
+                        </Link>
+                    </div>
                     <nav id="main-nav" className={menuActive ? 'main-nav active' : 'main-nav'}>
-                        <ul id="menu-primary-menu" className="menu">
-
-                            {/* {
+                        <ul className='menu' id="menu-primary-menu" onClick={handleMenuActive}>
+                            <li className='navbar-toggle'>
+                                <Link to="#" className='menu-bars'>
+                                    <AiIcons.AiOutlineClose />
+                                </Link>
+                            </li>
+                            {/* 
+                            {
                                 menus.map((data, idx) => (
-                                    <li key={idx} onClick={() => handleDropdown(idx)} className={`menu-item ${data.namesub ? 'menu-item-has-children' : ''} ${activeIndex === idx ? 'active' : ''}`} */}
+                                    <li key={idx} onClick={() => handleDropdown(idx)} className={`menu-item ${data.namesub ? 'menu-item-has-children' : ''} ${activeIndex === idx ? 'active' : ''}`}
 
-                                    {/* > */}
-                                        {/* <Link to={data.links}>{data.name}</Link>
+                                    >
+                                        <Link to={data.links}>{data.name}</Link>
                                         {
                                             data.namesub &&
                                             <ul className="sub-menu">
@@ -109,8 +120,8 @@ const Header = () => {
                                                     ))
                                                 }
                                             </ul>
-                                        } */}
-{/* 
+                                        }
+
                                     </li>
                                 ))
                             } */}
@@ -122,7 +133,8 @@ const Header = () => {
                     </button>
 
                     {/* <div className={`mobile-button ${menuActive ? 'active' : ''}`} onClick={handleMenuActive}><span></span></div> */}
-                    <div className={menuActive ? 'mobile-button active' : 'mobile-button'} onClick={handleMenuActive}><span></span></div>
+
+                    {/* <div className={menuActive ? 'mobile-button active' : 'mobile-button'} onClick={handleMenuActive}><span></span></div> */}
                 </div>
             </div>
         </header>

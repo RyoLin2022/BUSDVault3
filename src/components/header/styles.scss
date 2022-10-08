@@ -256,78 +256,129 @@
 } 
 
 /* Mobile Menu Button */
-.mobile-button {
-    @include transition3;
-    display: none;
-    position: absolute;
-    width: 26px;
-    height: 26px;
-    top: 50%;
-    right: 15px;
-    background-color: transparent;
-    cursor: pointer;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-    &:before,
-    &:after,
-    span {
-    background-color: #fff;
-    -webkit-transition: all ease 0.3s;
-    -moz-transition: all ease 0.3s;
-    transition: all ease 0.3s;
-    }
-    &:before,
-    &:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    height: 3px;
-    width: 100%;
-    left: 0;
-    top: 50%;
-    -webkit-transform-origin: 50% 50%;
-    -ms-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-    }
-    span {
-        position: absolute;
-        width: 100%;
-        height: 3px;
-        left: 0;
-        top: 50%;
-        overflow: hidden;
-        text-indent: 200%;
-    }
-    &:before {
-        -webkit-transform: translate3d(0, -7px, 0);
-        -moz-transform: translate3d(0, -7px, 0);
-        transform: translate3d(0, -7px, 0);
-    }
-    &:after {
-        -webkit-transform: translate3d(0, 7px, 0);
-        -moz-transform: translate3d(0, 7px, 0);
-        transform: translate3d(0, 7px, 0);
-    }
-    &.active span {
-        opacity: 0;
-    }
-    &.active:before {
-        -webkit-transform: rotate3d(0, 0, 1, 45deg);
-        -moz-transform: rotate3d(0, 0, 1, 45deg);
-        transform: rotate3d(0, 0, 1, 45deg);
-    }
-    &.active:after {
-        -webkit-transform: rotate3d(0, 0, 1, -45deg);
-        -moz-transform: rotate3d(0, 0, 1, -45deg);
-        transform: rotate3d(0, 0, 1, -45deg);
-    }
+// .mobile-button {
+//     @include transition3;
+//     display: none;
+//     position: absolute;
+//     width: 26px;
+//     height: 26px;
+//     top: 50%;
+//     right: 15px;
+//     background-color: transparent;
+//     cursor: pointer;
+//     -webkit-transform: translateY(-50%);
+//     -ms-transform: translateY(-50%);
+//     -o-transform: translateY(-50%);
+//     transform: translateY(-50%);
+//     &:before,
+//     &:after,
+//     span {
+//     background-color: #fff;
+//     -webkit-transition: all ease 0.3s;
+//     -moz-transition: all ease 0.3s;
+//     transition: all ease 0.3s;
+//     }
+//     &:before,
+//     &:after {
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     height: 3px;
+//     width: 100%;
+//     left: 0;
+//     top: 50%;
+//     -webkit-transform-origin: 50% 50%;
+//     -ms-transform-origin: 50% 50%;
+//     transform-origin: 50% 50%;
+//     }
+//     span {
+//         position: absolute;
+//         width: 100%;
+//         height: 3px;
+//         left: 0;
+//         top: 50%;
+//         overflow: hidden;
+//         text-indent: 200%;
+//     }
+//     &:before {
+//         -webkit-transform: translate3d(0, -7px, 0);
+//         -moz-transform: translate3d(0, -7px, 0);
+//         transform: translate3d(0, -7px, 0);
+//     }
+//     &:after {
+//         -webkit-transform: translate3d(0, 7px, 0);
+//         -moz-transform: translate3d(0, 7px, 0);
+//         transform: translate3d(0, 7px, 0);
+//     }
+//     &.active span {
+//         opacity: 0;
+//     }
+//     &.active:before {
+//         -webkit-transform: rotate3d(0, 0, 1, 45deg);
+//         -moz-transform: rotate3d(0, 0, 1, 45deg);
+//         transform: rotate3d(0, 0, 1, 45deg);
+//     }
+//     &.active:after {
+//         -webkit-transform: rotate3d(0, 0, 1, -45deg);
+//         -moz-transform: rotate3d(0, 0, 1, -45deg);
+//         transform: rotate3d(0, 0, 1, -45deg);
+//     }
 
-    @include tablet {
-        display: block;
-    }
+//     @include tablet {
+//         display: block;
+//     }
+// }
+
+.mobile-button {
+    background-color: #060b26;
+    width: 250px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top:0;
+    left:-100%;
+    transition: 850ms;
+    z-index: 5;
 }
+
+.mobile-button.active {
+    left:0;
+    transition: 350ms;
+    position: fixed;
+    z-index: 5;
+}
+
+.menu {
+    width: 100%;
+}
+
+.navbar-toggle {
+    background-color: #060b26;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.menu-bars {
+    margin-left: 2rem;
+    font-size: 2rem;
+    background: none;
+}
+
+.navbar {
+    background-color: #060b26;
+    height: 80px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+
+
+
 /* Sub Menu */
 
 
